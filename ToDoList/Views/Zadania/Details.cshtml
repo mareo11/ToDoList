@@ -1,0 +1,41 @@
+﻿@model ToDoList.Models.ZadaniaModelcs
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegóły zadania</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+      
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Szczegóły)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Szczegóły)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gotowe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gotowe)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Wróć do listy zadań</a>
+</div>

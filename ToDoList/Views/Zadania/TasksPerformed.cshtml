@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ToDoList.Models.ZadaniaModelcs>
+
+@{
+    ViewData["Title"] = "TasksPerformed";
+}
+
+<h1>TasksPerformed</h1>
+
+<p>
+    <a asp-action="Create">Dodaj zadanie</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gotowe)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Gotowe)
+            </td>
+
+            <td>
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.ZadaniaId })
+                @Html.ActionLink("Usuń", "Delete", new { id = item.ZadaniaId })
+            </td>
+          
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Wróć do listy zadań</a>
+</div>
+
