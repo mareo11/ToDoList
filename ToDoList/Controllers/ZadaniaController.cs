@@ -31,6 +31,11 @@ namespace ToDoList.Controllers
             return View(zadaniaRepository.GetZadaniaWykonane());
         }
 
+        public ActionResult TimedTasks()
+        {
+            return View(zadaniaRepository.GetZadaniaPoCzasie());
+        }
+
         // GET: ZadaniaController/Details/5
         public ActionResult Details(int id)
         {

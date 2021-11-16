@@ -11,6 +11,7 @@ namespace ToDoList.Repositories
         ZadaniaModelcs Get(int ZadaniaId);
         IQueryable<ZadaniaModelcs> GetAllActive();
         IQueryable<ZadaniaModelcs> GetZadaniaWykonane();
+        IQueryable<ZadaniaModelcs> GetZadaniaPoCzasie();
         void Add(ZadaniaModelcs zadania);
         void Update(int ZadaniaId, ZadaniaModelcs zadania);
         void Delete(int ZadaniaId);

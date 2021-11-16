@@ -38,12 +38,17 @@ namespace ToDoList.Repositories
 
         public IQueryable<ZadaniaModelcs> GetAllActive()
         {
-            return _context.Zadanias.Where(x => !x.Gotowe);
+            return _context.Zadanias.Where(x => !x.Gotowe && x.Data > DateTime.Now);
         }
 
         public IQueryable<ZadaniaModelcs> GetZadaniaWykonane()
         {
-            return _context.Zadanias.Where(x => x.Gotowe);
+            return _context.Zadanias.Where(x => x.Gotowe );
+        }
+
+        public IQueryable<ZadaniaModelcs> GetZadaniaPoCzasie()
+        {
+            return _context.Zadanias.Where(x => x.Data <= DateTime.Now && !x.Gotowe);
         }
 
         public void Update(int ZadaniaId, ZadaniaModelcs zadania)
