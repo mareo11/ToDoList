@@ -4,10 +4,10 @@
     ViewData["Title"] = "TasksPerformed";
 }
 
-<h1>TasksPerformed</h1>
+<h1 class="display-4">TasksPerformed</h1>
 
 <p>
-    <a asp-action="Create">Dodaj zadanie</a>
+    <a class="btn btn-primary" asp-action="Create">Dodaj zadanie</a>
 </p>
 <table class="table">
     <thead>
@@ -35,8 +35,8 @@
             </td>
 
             <td>
-                @Html.ActionLink("Szczegóły", "Details", new { id = item.ZadaniaId })
-                @Html.ActionLink("Usuń", "Delete", new { id = item.ZadaniaId })
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.ZadaniaId }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Usuń", "Delete", new { id = item.ZadaniaId }, new {@class = "btn btn-danger" })
             </td>
           
         </tr>
@@ -45,6 +45,6 @@
 </table>
 
 <div>
-    <a asp-action="Index">Wróć do listy zadań</a>
+    <a class = "btn btn-dark"asp-action="Index">Wróć do listy zadań</a>
 </div>
 
